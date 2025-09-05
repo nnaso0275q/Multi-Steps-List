@@ -12,6 +12,7 @@ export const Step1 = ({ form, setForm, changeStep }) => {
     if (form.firstName === "") {
       newErrors.firstName =
         "First name cannot contain special characters or numbers.";
+      // newErrors.placeholder="saccw"
     } else {
       newErrors.firstName = "";
     }
@@ -47,12 +48,13 @@ export const Step1 = ({ form, setForm, changeStep }) => {
       {/* Multi-Steps Box */}
       <div className="w-[480px] h-fit bg-[#FFFFFF] rounded-[8px] font-inter ml-[32px]   py-[32px]">
         <FormHeader></FormHeader>
-
         {/* First name */}
         <Input
           name="First name"
           type="text"
           value={form.firstName}
+          // error={form.placeholder}
+          error={errors.firstName}
           onChange={(f) =>
             setForm({
               ...form,
@@ -60,17 +62,13 @@ export const Step1 = ({ form, setForm, changeStep }) => {
             })
           }
         ></Input>
-        {errors.firstName && (
-          <div className="text-[#E14942] pl-[32px] font-normal inter text-[14px]">
-            {errors.firstName}
-          </div>
-        )}
 
         {/* Last name */}
         <Input
           name="Last name"
           type="text"
           value={form.lastName}
+          error={errors.lastName}
           onChange={(f) =>
             setForm({
               ...form,
@@ -78,17 +76,13 @@ export const Step1 = ({ form, setForm, changeStep }) => {
             })
           }
         ></Input>
-        {errors.lastName && (
-          <div className="text-[#E14942] pl-[32px] font-normal inter text-[14px]">
-            {errors.lastName}
-          </div>
-        )}
 
         {/* User name */}
         <Input
           name="User name"
           type="text"
           value={form.userName}
+          error={errors.userName}
           onChange={(f) =>
             setForm({
               ...form,
@@ -96,14 +90,11 @@ export const Step1 = ({ form, setForm, changeStep }) => {
             })
           }
         ></Input>
-        {errors.userName && (
-          <div className="text-[#E14942] pl-[32px] font-normal inter text-[14px]">
-            {errors.userName}
-          </div>
-        )}
 
         {/* Continue Button */}
-        <Button changeStep={handleContinue}></Button>
+        <Button changeStep={handleContinue} variant="firstBtn">
+          Continue 1/3
+        </Button>
       </div>
     </div>
   );

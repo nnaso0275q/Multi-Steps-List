@@ -2,6 +2,7 @@
 // import { Input, FormHeader } from "./components";
 import { Input } from "./input";
 import { FormHeader } from "./formHeader";
+import { Button } from "./button";
 import { useState } from "react";
 export const Step2 = ({ form, setForm, changeStep }) => {
   //   Error messages
@@ -65,6 +66,7 @@ export const Step2 = ({ form, setForm, changeStep }) => {
           name="Email"
           type="text"
           value={form.email}
+          error={errors.email}
           onChange={(f) =>
             setForm({
               ...form,
@@ -72,17 +74,13 @@ export const Step2 = ({ form, setForm, changeStep }) => {
             })
           }
         ></Input>
-        {errors.email && (
-          <div className="text-[#E14942] pl-[32px] font-normal inter text-[14px]">
-            {errors.email}
-          </div>
-        )}
 
         {/* Phone number */}
         <Input
           name="Phone number"
           type="text"
           value={form.phoneNumber}
+          error={errors.phoneNumber}
           onChange={(f) =>
             setForm({
               ...form,
@@ -90,17 +88,13 @@ export const Step2 = ({ form, setForm, changeStep }) => {
             })
           }
         ></Input>
-        {errors.phoneNumber && (
-          <div className="text-[#E14942] pl-[32px] font-normal inter text-[14px]">
-            {errors.phoneNumber}
-          </div>
-        )}
 
         {/* Password */}
         <Input
           name="Password"
           type="password"
           value={form.password}
+          error={errors.password}
           onChange={(f) =>
             setForm({
               ...form,
@@ -108,17 +102,13 @@ export const Step2 = ({ form, setForm, changeStep }) => {
             })
           }
         ></Input>
-        {errors.password && (
-          <div className="text-[#E14942] pl-[32px] font-normal inter text-[14px]">
-            {errors.password}
-          </div>
-        )}
 
         {/* Confirm password */}
         <Input
           name="Confirm password"
           type="password"
           value={form.confirmPassword}
+          error={errors.confirmPassword}
           onChange={(f) =>
             setForm({
               ...form,
@@ -126,26 +116,15 @@ export const Step2 = ({ form, setForm, changeStep }) => {
             })
           }
         ></Input>
-        {errors.confirmPassword && (
-          <div className="text-[#E14942] pl-[32px] font-normal inter text-[14px]">
-            {errors.confirmPassword}
-          </div>
-        )}
-        {/* Continue Button */}
 
+        {/* Continue Button */}
         <div className="gap-2 flex pl-[32px] pt-[70px]">
-          <button
-            className="w-[128px] h-[44px] rounded-[6px] border-[1px] border-[#CBD5E1] text-black  hover:border hover:shadow-xl/30 hover:shadow-gray-600  hover:duration-[0.3s]"
-            onClick={() => changeStep("step1")}
-          >
+          <Button changeStep={() => changeStep("step1")} variant="secondBtn">
             Back
-          </button>
-          <button
-            className="w-[280px] h-[44px] rounded-[6px]  bg-black text-white  hover:shadow-xl/30 hover:shadow-gray-600 hover:duration-[0.3s]"
-            onClick={secondContinue}
-          >
+          </Button>
+          <Button changeStep={secondContinue} variant="thirdBtn">
             Continue 2/3
-          </button>
+          </Button>
         </div>
       </div>
     </div>

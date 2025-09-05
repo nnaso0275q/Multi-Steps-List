@@ -2,6 +2,7 @@
 // import { FormHeader, InputCalendar } from "./components"
 import { FormHeader } from "./formHeader";
 import { Calendar } from "./calendar";
+import { Button } from "./button";
 export const Step3 = ({ changeStep }) => {
   return (
     // Background style
@@ -19,19 +20,13 @@ export const Step3 = ({ changeStep }) => {
         </div>
 
         {/* Continue Button */}
-        <div className="gap-2 flex pl-[32px] pt-[82px]">
-          <button
-            className="w-[128px] h-[44px] rounded-[6px]  border-[1px] border-[#CBD5E1] text-black hover:border hover:shadow-xl/30 hover:shadow-gray-600 hover:duration-[0.3s]"
-            onClick={() => changeStep("step2")}
-          >
+        <div className="gap-2 flex pl-[32px] pt-[70px]">
+          <Button changeStep={() => changeStep("step2")} variant="secondBtn">
             Back
-          </button>
-          <button
-            className="w-[280px] h-[44px] rounded-[6px]  bg-black text-white hover:shadow-xl/30 hover:shadow-gray-600 hover:duration-[0.3s]"
-            onClick={() => changeStep("step4")}
-          >
+          </Button>
+          <Button changeStep={() => changeStep("step4")} variant="thirdBtn">
             Continue 3/3
-          </button>
+          </Button>
         </div>
       </div>
     </div>
