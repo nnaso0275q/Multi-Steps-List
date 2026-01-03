@@ -1,7 +1,6 @@
 export const Button = ({ variant, children, changeStep }) => {
   let classes = "inter rounded-[6px] font-medium ";
-
-  // }
+  
   if (variant === "firstBtn") {
     classes +=
       "w-[416px] h-[44px] mt-[78px]   size-[16px] bg-black text-white  ml-[32px] hover:shadow-xl/30 hover:shadow-gray-600 hover:duration-[0.3s]";

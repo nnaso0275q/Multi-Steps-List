@@ -1,8 +1,8 @@
 "use client";
-// import { FormHeader, InputCalendar } from "./components"
 import { FormHeader } from "./formHeader";
 import { Calendar } from "./calendar";
 import { Button } from "./button";
+import { AddImage } from ".";
 export const Step3 = ({ changeStep }) => {
   return (
     // Background style
@@ -16,7 +16,7 @@ export const Step3 = ({ changeStep }) => {
         {/* Profile image */}
         <div className="text-[#334155] pl-[32px] font-semibold pt-[12px]">
           Profile image<span className="text-red-600"> *</span>
-          {/* <AddImage></AddImage> */}
+          <AddImage></AddImage>
         </div>
 
         {/* Continue Button */}

@@ -1,4 +1,3 @@
-"use client"
 import {Finish} from "./finish"
 export const Step4=()=>{
         return (
